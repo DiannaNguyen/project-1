@@ -4,7 +4,7 @@
 }
 
 body {
-	background: midnightblue;
+	background: lightblue;
 	padding: 0;
 	margin: 0;
 	display: flex;
@@ -12,6 +12,7 @@ body {
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
+    font-size: 20px;
 }
 .board {
 	width: 800px;
@@ -23,28 +24,63 @@ body {
 
 .category {
 	background: white;
-	box-sizing: border-box;
-	align-items: center;
-	justify-content: center;
-	padding: 4px;
-    margin: 0;
-    border: 2px solid black;
-    border-radius: 2px;
+	padding: 10px;
+	margin: 0;
+	border: 2px solid black;
+	font-weight: bolder;
+	text-align: center;
 }
 
-#questions {
-    margin: 10px 0;
-    padding: 4px;
-    border: 2px solid black;
-    background: white;
-
+.questions {
+	margin: 10px 0;
+	padding: 4px;
+	border: 2px solid black;
+	background: white;
 }
 
 .answer-btn {
-    display: flex;
-    flex-direction: column;
-    margin: 5px 0;
+	display: flex;
+	flex-direction: column;
+	margin: 15px 0;
 }
 .button {
-    margin: 5px 0;
+	margin: 5px 0;
+	padding: 5px 10px;
+	background: gray;
+	border-radius: 5px;
+	color: white;
+    font-size: 18px;
+}
+.button:hover {
+	background: white;
+	color: gray;
+}
+.button.correct {
+    background: limegreen;
+}
+ .button.incorrect {
+     background: red;
+ }
+
+#continue, #start {
+	background: lightcoral;
+	border-radius: 5px;
+	color: white;
+	padding: 10px;
+    font-size: 1.5rem;
+}
+
+#continue:hover, #start:hover {
+	color: lightcoral;
+	background: white;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide-content {
+    display: none;
 }
