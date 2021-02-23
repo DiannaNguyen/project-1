@@ -20,21 +20,22 @@ let currentQuestion = 0;
 
 
 startButton.addEventListener("click", startGame);
-// continueButton.addEventListener("click", () => {
-
-// });
+continueButton.addEventListener("click", () => {
+    currentQuestion++;
+    nextQuestion();
+});
 
 function startGame() {
 	// console.log('Start Game');
 	startButton.classList.add("hide-content"); //Reference: https://www.w3schools.com/jsref/prop_element_classlist.asp & https://git.generalassemb.ly/SEIR-201/js-dom
-   questionBox_div.classList.remove("hide-content"); 
-   
-   
-   let randomQuestions = Math.floor(Math.random() * questions.length);
-   while(questions2.includes(questions[randomQuestions])){
-       randomQuestions= Math.floor(Math.random() * questions.length);
-   }
-   nextQuestion();
+    
+    randomQuestions = Math.floor(Math.random() * questions.length);
+    while(questions2.includes(questions[randomQuestions])){
+        randomQuestions= Math.floor(Math.random() * questions.length);
+    }
+
+    questionBox_div.classList.remove("hide-content"); 
+    nextQuestion();
 }
 
 function nextQuestion() {
@@ -43,27 +44,22 @@ function nextQuestion() {
 }
 
 function displayCategory(category) {
-    category_div.innerText = questions.category;
+    for (let i = 0; i < questions.length;i++) {
+        category_div.innerText = questions[i].category;
+    }
 }
 
 function displayQuestion(question) {
-    questions_div.innerText = questions.questions;
+    for (let i = 0; i < questions.length; i++) {
+        questions_div.innerText = questions[i].question;
+        
+    }
 }
+
 
 function selectAnswer() {
-
+    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -88,7 +84,7 @@ const questions = [
     },
     {
         category: "Geography",
-        question: "What is the world's biggest island",
+        question: "What is the world's biggest island?",
         answer: [
             {option: "Greenland", correct: true},
             {option: "Cuba", correct: false},
