@@ -7,72 +7,163 @@ body {
 	background: lightblue;
 	padding: 0;
 	margin: 0;
-	display: flex;
-	width: 100vw;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
 	font-size: 20px;
 }
-.board {
+
+.button {
+	margin: 5px 0;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 18px;
+	background: lightcoral;
+	color: white;
+	display: inline-block;
+}
+
+.button:hover {
+	color: lightcoral;
+	background: white;
+}
+
+.question-box{
+	max-width: 600px;
+	background: white;
+	border-radius: 5px;
+	margin: 30px auto;
+	padding: 30px;
+
+}
+.category {
+	background: white;
+	color: black;
+	padding: 15px;
+	margin: 0;
+	border: 4px solid gray;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 25px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.questions-text {
+	margin: 10px 0;
+	padding: 20px;
+	border: 4px solid gray;
+	background: white;
+	color: black;
+	font-weight: 400;
+	font-size: 20px;
+
+}
+
+.correct-text {
+	color: limegreen;
+	font-size: 35px;
+	display: none;
+	font-weight: 400;
+}
+
+.incorrect-text {
+	color: red;
+	font-size: 35px;
+	display: none;
+	font-weight: 400;
+}
+
+.answers-box .option {
+	background: gray;
+	color: white;
+	font-size: 18px;
+	border-radius: 5px;
+	line-height: 22px;
+	padding: 15px;
+	margin: 15px 0;
+	border: 3px solid black;
+}
+.answers-box .option:hover {
+	background: white;
+	color: gray;
+}
+.answers-box .option.correct {
+	background: limegreen;
+}
+.answers-box .option.incorrect {
+	background: red;
+}
+
+
+
+
+
+/* .board {
 	width: 800px;
 	max-width: 80%;
-	padding: 15px;
+	margin: 40px auto;
+	padding: 30px;
 	border: 4px solid gray;
-	border-radius: 4px;
+	border-radius: 10px;
 }
 
-#category {
-	background: white;
+.category {
+	background: ;
+	color: gray;
 	padding: 10px;
 	margin: 0;
-	border: 2px solid black;
-	font-weight: bolder;
+	border: 4px solid black;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 25px;
 	text-align: center;
+	text-transform: uppercase;
 }
 
-#questions {
+.questions-text {
 	margin: 10px 0;
-	padding: 4px;
-	border: 2px solid black;
+	padding: 20px 0;
+	border: 4px solid black;
 	background: white;
+	color: black;
+	font-weight: 400;
+
 }
 
-.answer-btn {
+.answer-box .option {
 	display: flex;
 	flex-direction: column;
 	margin: 15px 0;
 }
-.button {
+
+/* .button {
 	margin: 5px 0;
 	padding: 5px 10px;
 	background: gray;
 	border-radius: 5px;
 	color: white;
 	font-size: 18px;
-}
-.button:hover {
+} */
+/* .answer-box {
 	background: white;
 	color: gray;
 }
-.button.correct {
+.correct {
 	background: limegreen;
 }
-.button.incorrect {
+.incorrect {
 	background: red;
 }
 
-#continue,
-#start {
+.continue,
+.start {
 	background: lightcoral;
 	border-radius: 5px;
 	color: white;
 	padding: 10px;
-	font-size: 1.5rem;
+	font-size: 25px
 }
 
-#continue:hover,
-#start:hover {
+.continue:hover,
+.start:hover {
 	color: lightcoral;
 	background: white;
 }
@@ -86,3 +177,13 @@ body {
 .hide-content {
 	display: none;
 }
+
+.correct h1 {
+	color: limegreen;
+	font-size: 35px;
+}
+
+.incorrect h1 {
+	color: red;
+	font-size: 35px;
+} */ */
