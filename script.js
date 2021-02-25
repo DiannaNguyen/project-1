@@ -191,10 +191,13 @@ function nextQuestion() {
 				if(currentQuestion.answer == option.id){
 					option.style.backgroundColor = "limegreen";
 					option.style.color = "black";
-				} else {
-
+				} else if (currentQuestion.answer != option.id) {
+					option.style.backgroundColor = "red"
+					option.style.color = "black";
 				}
-			}) 
+
+				
+			});
 			optionsBox.appendChild(option);
 			
 		}
