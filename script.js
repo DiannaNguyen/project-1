@@ -137,18 +137,24 @@ const scoreButton = document.querySelector('.score-board-btn');
 const scoreBox = document.querySelector('.score-box');
 const restartButton = document.querySelector(".restart-btn");
 
+let score = 0;
 let currentQuestion;
 let remainQuestions = [];
 let remainOptions = [];
 
+function startScreen () {
+	startButton.style.display = 
+	startButton.addEventListener('click', startGame);
+
+}
+
 startButton.addEventListener('click', startGame);
 
-function startScreen() {
-	startButton.display = 'none';
-}
 function startGame() {
 	startButton.classList.add('hide');
 	questionBox.classList.remove('hide');
+	// scoreBox.classList.add("hide");
+	scoreBox.classList.add('hide');
 	setRemainQuestions();
 	nextQuestion();
 }
@@ -201,6 +207,7 @@ function nextQuestion() {
 			if (currentQuestion.answer == option.id) {
 				option.style.backgroundColor = 'limegreen';
 				option.style.color = 'black';
+				score += 5;
 				correctText.classList.remove('hide');
 				continueButton.classList.remove("hide");
 				continueButton.addEventListener('click', nextQuestion);
@@ -216,13 +223,15 @@ function nextQuestion() {
 		});
 		optionsBox.appendChild(option);
 		correctText.classList.add('hide');
+		incorrectText.classList.add("hide");
 		continueButton.classList.add("hide");
+		scoreButton.classList.add("hide");
+		
 	}
 }
 
 function scoreBoard() {
 	questionBox.classList.add("hide");
-	scoreBox.classList.remove("hide");
-	restartButton.addEventListener("click", nextQuestion);
-	
+	scoreBox.classList.remove('hide');
+	if (restartButton.addEventListener('click', startGame));	
 }
