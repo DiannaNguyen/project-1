@@ -25,7 +25,8 @@ Let's play a fun trivia quiz game where you, the player, gets to see how smart y
 - Check out into a dev branch
 - Change into the new directory
 - Open the entire folder into your text editor 
-- Don't forget to commit your changes
+- Open server to view and play
+- If any changes are made don't forget to commit your changes
 - Get funky with it - add all the unique and fun facts you have!
 - Push to the origin branch (when you're all done)
 
