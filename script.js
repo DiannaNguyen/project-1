@@ -211,6 +211,7 @@ function nextQuestion() {
 				correctText.classList.remove('hide');
 				continueButton.classList.remove("hide");
 				continueButton.addEventListener('click', nextQuestion);
+	
 			} else if (currentQuestion.answer != option.id) {
 				option.style.backgroundColor = 'red';
 				option.style.color = 'black';
@@ -220,6 +221,8 @@ function nextQuestion() {
 				scoreButton.classList.remove("hide");
 				scoreButton.addEventListener("click", scoreBoard);
 			}	
+			finalAnswer();
+			option.disable = false;
 		});
 		optionsBox.appendChild(option);
 		correctText.classList.add('hide');
@@ -229,6 +232,15 @@ function nextQuestion() {
 		
 	}
 }
+// stop the user from clicking other options once they clicked one - can't change answers
+//Reference: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events
+function finalAnswer() {
+	const totalOptions = optionsBox.children.length;
+	for(let i = 0; i < totalOptions; i++) {
+		optionsBox.children[i].classList.add("final-answer-chosen");
+	} 
+}
+
 
 function scoreBoard() {
 	questionBox.classList.add("hide");
