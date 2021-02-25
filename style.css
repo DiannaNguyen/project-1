@@ -17,8 +17,10 @@ body {
 	font-size: 18px;
 	background: lightcoral;
 	color: white;
-	display: inline-block;
+	border: 2px solid gray;
+	display: flex;
 }
+
 
 .button:hover {
 	color: lightcoral;
@@ -71,119 +73,31 @@ body {
 	font-weight: 400;
 }
 
-.answers-box .option {
+
+.question-box .answers-box .option {
 	background: gray;
 	color: white;
-	font-size: 18px;
-	border-radius: 5px;
+	padding: 13px 15px;
+	font-size: 16px;
 	line-height: 22px;
-	padding: 15px;
+	border-radius: 5px;
 	margin: 15px 0;
-	border: 3px solid black;
+	border: 2px solid black;
+
 }
-.answers-box .option:hover {
+
+
+.question-box .answers-box .option:hover {
 	background: white;
 	color: gray;
 }
-.answers-box .option.correct {
+.question-box .answers-box .option.correct {
 	background: limegreen;
 }
-.answers-box .option.incorrect {
+.question-box .answers-box .option.incorrect {
 	background: red;
 }
 
-
-
-
-
-/* .board {
-	width: 800px;
-	max-width: 80%;
-	margin: 40px auto;
-	padding: 30px;
-	border: 4px solid gray;
-	border-radius: 10px;
-}
-
-.category {
-	background: ;
-	color: gray;
-	padding: 10px;
-	margin: 0;
-	border: 4px solid black;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 25px;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-.questions-text {
-	margin: 10px 0;
-	padding: 20px 0;
-	border: 4px solid black;
-	background: white;
-	color: black;
-	font-weight: 400;
-
-}
-
-.answer-box .option {
-	display: flex;
-	flex-direction: column;
-	margin: 15px 0;
-}
-
-/* .button {
-	margin: 5px 0;
-	padding: 5px 10px;
-	background: gray;
-	border-radius: 5px;
-	color: white;
-	font-size: 18px;
-} */
-/* .answer-box {
-	background: white;
-	color: gray;
-}
-.correct {
-	background: limegreen;
-}
-.incorrect {
-	background: red;
-}
-
-.continue,
-.start {
-	background: lightcoral;
-	border-radius: 5px;
-	color: white;
-	padding: 10px;
-	font-size: 25px
-}
-
-.continue:hover,
-.start:hover {
-	color: lightcoral;
-	background: white;
-}
-
-.controls {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.hide-content {
+.hide {
 	display: none;
 }
-
-.correct h1 {
-	color: limegreen;
-	font-size: 35px;
-}
-
-.incorrect h1 {
-	color: red;
-	font-size: 35px;
-} */ */
