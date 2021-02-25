@@ -135,6 +135,7 @@ const optionsBox = document.querySelector('.answers-box');
 const continueButton = document.querySelector('.continue-next-question');
 const scoreButton = document.querySelector('.score-board-btn');
 const scoreBox = document.querySelector('.score-box');
+const restartButton = document.querySelector(".restart-btn");
 
 let currentQuestion;
 let remainQuestions = [];
@@ -142,6 +143,9 @@ let remainOptions = [];
 
 startButton.addEventListener('click', startGame);
 
+function startScreen() {
+	startButton.display = 'none';
+}
 function startGame() {
 	startButton.classList.add('hide');
 	questionBox.classList.remove('hide');
@@ -217,4 +221,6 @@ function nextQuestion() {
 function scoreBoard() {
 	questionBox.classList.add("hide");
 	scoreBox.classList.remove("hide");
+	restartButton.addEventListener("click", startScreen);
+	
 }

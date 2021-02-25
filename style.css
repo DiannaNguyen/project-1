@@ -5,30 +5,34 @@
 
 body {
 	background: lightblue;
+	
 	padding: 0;
 	margin: 0;
 	font-size: 20px;
-	display: flex;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 }
  
 .start-screen {
-	max-width: 300px;
+	max-width: 600px;
 	background: white;
 	border-radius: 10px;
-	margin: 30px auto;
-	padding: 30px;
-	/* Reference: https://stackoverflow.com/questions/982054/how-to-center-an-element-in-the-middle-of-the-browser-window */
-	position: absolute;
+	margin: auto;
+	padding: 50px;
+	/* Reference: https://stackoverflow.com/questions/982054/how-to-center-an-element-in-the-middle-of-the-browser-window
+	https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ */
+	position: fixed;
 	top: 50%;
 	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .start-screen .button {
-	display: flex;
   	justify-content: center;
   	align-items: center;
+	font-size: 50px;	
+	position: relative;
 }
 
 .button {
@@ -56,12 +60,13 @@ body {
 .question-box{
 	max-width: 600px;
 	background: white;
-	border-radius: 5px;
+	border-radius: 10px;
 	margin: 30px auto;
 	padding: 30px;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
+	transform: translate(-50%, -50%);
 
 }
 
@@ -128,9 +133,10 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .scoreboard{
