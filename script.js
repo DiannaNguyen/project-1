@@ -135,11 +135,9 @@ const optionsBox = document.querySelector('.answers-box');
 const scoreButton = document.querySelector('.gameOver-btn');
 const continueButton = document.querySelector('.continue-next-question');
 
-
 const scoreBox = document.querySelector('.score-box');
-let totalScore = document.querySelector(".score");
-const restartButton = document.querySelector(".restart-btn");
-
+let totalScore = document.querySelector('.score');
+const restartButton = document.querySelector('.restart-btn');
 
 let score = 0;
 let currentQuestion;
@@ -155,7 +153,6 @@ function startGame() {
 	setRemainQuestions();
 	nextQuestion();
 }
-
 
 // push questions into empty array - remainQuestions
 function setRemainQuestions() {
@@ -207,7 +204,7 @@ function nextQuestion() {
 				option.style.backgroundColor = 'limegreen';
 				option.style.color = 'black';
 				correctText.classList.remove('hide');
-				continueButton.classList.remove("hide");
+				continueButton.classList.remove('hide');
 				continueButton.addEventListener('click', nextQuestion);
 			} else if (currentQuestion.answer != option.id) {
 				option.style.backgroundColor = 'red';
@@ -215,18 +212,17 @@ function nextQuestion() {
 				incorrectText.classList.remove('hide');
 				//move to scoreboard, input name and show score
 				//provide restart button to go back to questions
-				scoreButton.classList.remove("hide");
-				scoreButton.addEventListener("click", scoreBoard);
-				
-			} 
+				scoreButton.classList.remove('hide');
+				scoreButton.addEventListener('click', scoreBoard);
+			}
 			finalAnswer();
 			totalScore.innerText = currentScore;
 		});
 		optionsBox.appendChild(option);
 		correctText.classList.add('hide');
-		incorrectText.classList.add("hide");
-		continueButton.classList.add("hide");
-		scoreButton.classList.add("hide");
+		incorrectText.classList.add('hide');
+		continueButton.classList.add('hide');
+		scoreButton.classList.add('hide');
 	}
 }
 // stop the user from clicking other options once they clicked one - can't change answers - call function in the addEventListener to work
@@ -236,18 +232,18 @@ function nextQuestion() {
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events
 function finalAnswer() {
 	const totalOptions = optionsBox.children.length;
-	for(let i = 0; i < totalOptions; i++) {
-		optionsBox.children[i].classList.add("final-answer-chosen");
-	} 
+	for (let i = 0; i < totalOptions; i++) {
+		optionsBox.children[i].classList.add('final-answer-chosen');
+	}
 }
 
-
 function scoreBoard() {
-	questionBox.classList.add("hide");
+	questionBox.classList.add('hide');
 	scoreBox.classList.remove('hide');
-	if (restartButton.addEventListener('click', () => {
-		startGame();
-		currentScore = score;
-	} 
-	));
+	if (
+		restartButton.addEventListener('click', () => {
+			startGame();
+			currentScore = score;
+		})
+	);
 }
