@@ -132,32 +132,30 @@ const questionsText = document.querySelector('.questions-text');
 const correctText = document.querySelector('.correct-text');
 const incorrectText = document.querySelector('.incorrect-text');
 const optionsBox = document.querySelector('.answers-box');
+const scoreButton = document.querySelector('.gameOver-btn');
 const continueButton = document.querySelector('.continue-next-question');
-const scoreButton = document.querySelector('.score-board-btn');
+
+
 const scoreBox = document.querySelector('.score-box');
+let totalScore = document.querySelector(".score");
 const restartButton = document.querySelector(".restart-btn");
+
 
 let score = 0;
 let currentQuestion;
 let remainQuestions = [];
 let remainOptions = [];
-
-function startScreen () {
-	startButton.style.display = 
-	startButton.addEventListener('click', startGame);
-
-}
-
+let currentScore = 0;
 startButton.addEventListener('click', startGame);
 
 function startGame() {
 	startButton.classList.add('hide');
 	questionBox.classList.remove('hide');
-	// scoreBox.classList.add("hide");
 	scoreBox.classList.add('hide');
 	setRemainQuestions();
 	nextQuestion();
 }
+
 
 // push questions into empty array - remainQuestions
 function setRemainQuestions() {
@@ -205,35 +203,37 @@ function nextQuestion() {
 		option.className = 'option';
 		option.addEventListener('click', () => {
 			if (currentQuestion.answer == option.id) {
+				currentScore += 5;
 				option.style.backgroundColor = 'limegreen';
 				option.style.color = 'black';
-				score += 5;
 				correctText.classList.remove('hide');
 				continueButton.classList.remove("hide");
 				continueButton.addEventListener('click', nextQuestion);
-	
 			} else if (currentQuestion.answer != option.id) {
 				option.style.backgroundColor = 'red';
 				option.style.color = 'black';
 				incorrectText.classList.remove('hide');
 				//move to scoreboard, input name and show score
-				//provide restart button to go back to start button
+				//provide restart button to go back to questions
 				scoreButton.classList.remove("hide");
 				scoreButton.addEventListener("click", scoreBoard);
-			}	
+				
+			} 
 			finalAnswer();
-			option.disable = false;
+			totalScore.innerText = currentScore;
 		});
 		optionsBox.appendChild(option);
 		correctText.classList.add('hide');
 		incorrectText.classList.add("hide");
 		continueButton.classList.add("hide");
 		scoreButton.classList.add("hide");
-		
 	}
 }
-// stop the user from clicking other options once they clicked one - can't change answers
-//Reference: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events
+// stop the user from clicking other options once they clicked one - can't change answers - call function in the addEventListener to work
+//Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+// https://stackoverflow.com/questions/11451483/disable-onclick-with-css-possible
+//
+// https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events
 function finalAnswer() {
 	const totalOptions = optionsBox.children.length;
 	for(let i = 0; i < totalOptions; i++) {
@@ -245,5 +245,9 @@ function finalAnswer() {
 function scoreBoard() {
 	questionBox.classList.add("hide");
 	scoreBox.classList.remove('hide');
-	if (restartButton.addEventListener('click', startGame));	
+	if (restartButton.addEventListener('click', () => {
+		startGame();
+		currentScore = score;
+	} 
+	));
 }

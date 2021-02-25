@@ -152,25 +152,25 @@ body {
 }
 
 .scoreboard{
-	font-size: 36px;
+	font-size: 44px;
     line-height: 42px;
     color: black;
     margin: 30px;
 }
 
 .score{
-	font-size: 24px;
+	font-size: 40px;
     padding: 10px;
 	display: inline-block;
 }
 
-.score-board-btn{
+.gameOver-btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.score-board-btn .button{
+.gameOver-btn .button{
 	text-transform: uppercase;
 }
 
