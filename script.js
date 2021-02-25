@@ -215,12 +215,14 @@ function nextQuestion() {
 			}	
 		});
 		optionsBox.appendChild(option);
+		correctText.classList.add('hide');
+		continueButton.classList.add("hide");
 	}
 }
 
 function scoreBoard() {
 	questionBox.classList.add("hide");
 	scoreBox.classList.remove("hide");
-	restartButton.addEventListener("click", startScreen);
+	restartButton.addEventListener("click", nextQuestion);
 	
 }
