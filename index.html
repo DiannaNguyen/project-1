@@ -12,22 +12,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
-    <div class="question-box">
-        <div class="category">
-            <!-- Geography -->
-        </div>
-        <div class="questions-text">
-            <!-- Which two U.S. states don't observe Daylight Saving Time? -->
-        </div>
-        <h1 class="correct-text hide">Correct</h1>
-        <h1 class="incorrect-text hide">Incorrect</h1>
-        <div class="answers-box">
-        </div>
-        <div class="continue-next-question">
-            <button class="button">Continue</button>
-        </div>
-    </div>
 
+    <div class="start-screen">
+        <button class="button">Start</button>
+    </div>
+    <div class="gameBoard">
+
+        <div class="question-box hide">
+            <div class="category">
+                
+            </div>
+            <div class="questions-text">
+                
+            </div>
+            <h1 class="correct-text hide">Correct</h1>
+            <h1 class="incorrect-text hide">Incorrect</h1>
+            <div class="answers-box">
+            </div>
+            <div class="continue-next-question hide">
+                <button class="button">Continue</button>
+            </div>
+            <div class="score-board-btn hide">
+                <button class="button">Scoreboard</button>
+            </div>
+        </div>
+        
+        <div class="score-box hide">
+            <div class="scoreboard">Scoreboard</div>
+            <div class="player-name"></div>
+            Usename: <input type="text" id="myText" value=" ">
+            <button class="btn" onclick="enterName()">Enter</button>
+            <div class="score">100</div>
+            <div class="restart-btn">
+                <button class="button">Restart</button>
+            </div>
+        </div>
+        
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
