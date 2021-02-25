@@ -126,6 +126,11 @@ body {
 	border: 2px solid black;
 	cursor: pointer;
 }
+.question-box .answers-box .option:hover {
+	background: white;
+	color: gray;
+}
+
 
 .question-box .answers-box .option.final-answer-chosen {
 	pointer-events: none;
